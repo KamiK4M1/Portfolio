@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FaCertificate, FaTimes } from 'react-icons/fa';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaCertificate, FaTimes } from "react-icons/fa";
 
 interface Certificate {
   id: number;
@@ -13,17 +13,18 @@ interface Certificate {
 const certificates: Certificate[] = [
   {
     id: 1,
-    title: 'AI Engineering Certificate',
-    image: './cert/SuperAI_Theory_LV1.png',
-    description: 'Completed a comprehensive course on AI engineering.',
-    date: 'June 2023',
+    title: "AI Engineering Certificate",
+    image: "./cert/SuperAI_Theory_LV1.png",
+    description: "Completed a comprehensive course on AI engineering.",
+    date: "June 2023",
   },
   {
     id: 2,
-    title: 'Web Development Certificate',
-    image: '/path-to-your-certificate-image-2.jpg',
-    description: 'Gained in-depth knowledge in modern web development technologies.',
-    date: 'August 2023',
+    title: "Web Development Certificate",
+    image: "/path-to-your-certificate-image-2.jpg",
+    description:
+      "Gained in-depth knowledge in modern web development technologies.",
+    date: "August 2023",
   },
   // Add more certificates as needed
 ];
@@ -32,7 +33,10 @@ const Certificates: React.FC = () => {
   const [selectedCert, setSelectedCert] = useState<Certificate | null>(null);
 
   return (
-    <section id="certificates" className="bg-gradient-to-b from-gray-900 to-black py-20">
+    <section
+      id="certificates"
+      className="bg-gradient-to-b from-gray-900 to-black py-20"
+    >
       <div className="container mx-auto text-center z-10 relative">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
@@ -62,12 +66,18 @@ const Certificates: React.FC = () => {
                   className="w-full h-64 object-cover transition-transform duration-300 hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-white text-lg font-semibold">View Certificate</span>
+                  <span className="text-white text-lg font-semibold">
+                    View Certificate
+                  </span>
                 </div>
               </div>
-              <h3 className="text-white text-2xl font-bold mb-2">{certificate.title}</h3>
+              <h3 className="text-white text-2xl font-bold mb-2">
+                {certificate.title}
+              </h3>
               <p className="text-gray-400 mb-3">{certificate.description}</p>
-              <p className="text-yellow-400 text-sm font-semibold">{certificate.date}</p>
+              <p className="text-yellow-400 text-sm font-semibold">
+                {certificate.date}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -100,10 +110,18 @@ const Certificates: React.FC = () => {
                 alt={selectedCert.title}
                 className="w-auto h-auto max-w-full max-h-[calc(100vh-8rem)] object-contain"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gray-800 bg-opacity-90 p-4">
-                <h3 className="text-white text-2xl font-bold mb-2">{selectedCert.title}</h3>
-                <p className="text-gray-300 mb-2">{selectedCert.description}</p>
-                <p className="text-yellow-400 text-sm font-semibold">{selectedCert.date}</p>
+              <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 bg-gray-800 bg-opacity-90 p-4 transform translate-y-4 hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-white text-2xl font-bold mb-2">
+                    {selectedCert.title}
+                  </h3>
+                  <p className="text-gray-300 mb-2">
+                    {selectedCert.description}
+                  </p>
+                  <p className="text-yellow-400 text-sm font-semibold">
+                    {selectedCert.date}
+                  </p>
+                </div>
               </div>
             </motion.div>
           </motion.div>
