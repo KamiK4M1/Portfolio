@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FaPython, FaLinux } from "react-icons/fa"; // Importing React Icons
-import { SiTensorflow, SiPytorch } from "react-icons/si";
+import { SiTensorflow, SiPytorch, SiCplusplus, SiNextdotjs,  } from "react-icons/si";
 import SharedBackground from "./sharedbackground";
 
 export default function Skills() {
@@ -56,7 +56,26 @@ export default function Skills() {
             <FaLinux className="text-white text-4xl mb-4" />
             <h3 className="text-white text-xl font-semibold">Linux</h3>
           </motion.div>
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 1.1 }}
+            className="bg-gray-900 p-6 rounded-lg shadow-lg text-center flex flex-col items-center justify-center"
+          >
+            <SiCplusplus className="text-white text-4xl mb-4" />
+            <h3 className="text-white text-xl font-semibold">C++</h3>
+          </motion.div>
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 1.1 }}
+            className="bg-gray-900 p-6 rounded-lg shadow-lg text-center flex flex-col items-center justify-center"
+          >
+            <SiNextdotjs className="text-white text-4xl mb-4" />
+            <h3 className="text-white text-xl font-semibold">Next.js</h3>
+          </motion.div>
 
+          
         </div>
       </div>
     </section>
