@@ -13,9 +13,9 @@ interface Certificate {
 const certificates: Certificate[] = [
   {
     id: 1,
-    title: "AI Engineering Certificate",
+    title: "Super AI Engineer Theory LV1",
     image: "./cert/SuperAI_Theory_LV1.png",
-    description: "Completed a comprehensive course on AI engineering.",
+    description: "Pass the Super AI Engineer Theory LV1 Test.",
     date: "June 2023",
   },
   {
@@ -42,16 +42,16 @@ const Certificates: React.FC = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-white text-5xl font-bold mb-12"
+          className="text-white text-4xl md:text-5xl font-bold mb-12"
         >
           <FaCertificate className="inline-block mr-3 text-yellow-400" />
           Certificates
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {certificates.map((certificate) => (
             <motion.div
               key={certificate.id}
-              whileHover={{ scale: 1.05, rotate: 1 }}
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -63,7 +63,7 @@ const Certificates: React.FC = () => {
                 <img
                   src={certificate.image}
                   alt={certificate.title}
-                  className="w-full h-64 object-cover transition-transform duration-300 hover:scale-110"
+                  className="w-full h-48 sm:h-64 object-cover transition-transform duration-300 hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
                   <span className="text-white text-lg font-semibold">
@@ -71,7 +71,7 @@ const Certificates: React.FC = () => {
                   </span>
                 </div>
               </div>
-              <h3 className="text-white text-2xl font-bold mb-2">
+              <h3 className="text-white text-xl sm:text-2xl font-bold mb-2">
                 {certificate.title}
               </h3>
               <p className="text-gray-400 mb-3">{certificate.description}</p>
@@ -108,11 +108,11 @@ const Certificates: React.FC = () => {
               <img
                 src={selectedCert.image}
                 alt={selectedCert.title}
-                className="w-auto h-auto max-w-full max-h-[calc(100vh-8rem)] object-contain"
+                className="w-auto h-auto max-w-full max-h-[calc(100vh-8rem)] object-contain p-2 sm:p-4"
               />
               <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 bg-gray-800 bg-opacity-90 p-4 transform translate-y-4 hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-white text-2xl font-bold mb-2">
+                <div className="absolute bottom-0 left-0 right-0 bg-gray-800 bg-opacity-90 p-4 sm:p-6 transform translate-y-4 hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-white text-2xl sm:text-3xl font-bold mb-2">
                     {selectedCert.title}
                   </h3>
                   <p className="text-gray-300 mb-2">
